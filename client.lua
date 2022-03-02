@@ -19,11 +19,11 @@ end
 
 if Config['Test_Command'] then
     RegisterCommand('market', function()
-    SetNuiFocus(true, true)
-    SendNUIMessage({
-        type = "data",
-        item = Config['items']
-    })
+        SetNuiFocus(true, true)
+        SendNUIMessage({
+            type = "data",
+            item = Config['items']
+        })
     end)
 end
 
