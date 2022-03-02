@@ -3,14 +3,18 @@ Location Changing Blackmarket with easy to use config and qb-target
 
 Still a wip. If you find any issues and have found a fix the please create a pull request
 
+---
+
 ## Dependencies 
 
 qb-target - https://github.com/BerkieBb/qb-target
 
 qb-core - https://github.com/qbcore-framework/qb-core
 
-## License 
+---
 
+## License 
+```
 Blackmarket-V2
 Copyright (C) 2022  HUB Development
 
@@ -26,3 +30,4 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
+```
