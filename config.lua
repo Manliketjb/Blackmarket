@@ -1,4 +1,5 @@
 Config = {
+    ['Test_Command'] = true, -- /market
     ['items'] = {
         -----------ITEMS-------------
         [1] = {
