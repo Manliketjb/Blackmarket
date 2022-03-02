@@ -6,4 +6,5 @@ Still a wip. If you find any issues and have found a fix the please create a pul
 ## Dependencies 
 
 qb-target - https://github.com/BerkieBb/qb-target
+
 qb-core - https://github.com/qbcore-framework/qb-core
