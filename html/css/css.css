@@ -1,0 +1,123 @@
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 5px;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.body {
+    height: 20vh;
+    width: 100%;
+    padding-top: 80px;
+}
+
+.container {
+    padding-top: 20px;
+    min-height: 10px;
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(7, minmax(150px, 180px));
+    justify-content: center;
+    align-items: stretch;
+}
+
+.card {
+    width: 150px;
+    height: 200px;
+    position: relative;
+    padding: 10px;
+    background: rgba(43, 43, 43, 0.616);
+    display: grid;
+    grid-template-rows: 8fr 1fr 1fr;
+    box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.057);
+    transition: 0.2s ease-in;
+    border: 3px solid #9648fb;
+    border-radius: 25px;
+    font-size: 0px;
+}
+
+.card .card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+}
+
+.card .card-content .top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    color: rgba(0, 201, 10, 0.836);
+}
+
+.card .card-content .top-bar .float-right {
+    float: right;
+}
+
+.card .card-content .img {
+    width: 50%;
+    justify-content: bottom;
+    align-content: bottom;
+    text-align: center;
+}
+
+.card .card-content .img img {
+    border-radius: 10px;
+    max-width: 1100%;
+    max-height: 550px;
+    margin-left: 28px;
+    margin-top: 50px;
+}
+
+.card .card-description {
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+.card .card-description .title {
+    justify-content: bottom;
+    align-content: bottom;
+    text-transform: uppercase;
+    font-size: 11px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.card .card-footer {
+    text-transform: uppercase;
+    padding: 0.3em;
+    border-top: 0.5px solid #ececec;
+    letter-spacing: 0.1em;
+    color: white;
+    justify-items: left;
+    align-items: center;
+    display: flex;
+}
+
+.card:hover {
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 45px 60px 0px rgba(0, 0, 0, 0.087);
+    color: rgba(255, 255, 255, 0);
+    font-size: 15px;
+}
+
+.itemscode {
+    display: none;
+}
