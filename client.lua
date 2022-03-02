@@ -7,43 +7,43 @@ local Locations = {
             x = tonumber(Config['LocationSets'][setLocPick].x),
             y = tonumber(Config['LocationSets'][setLocPick].y),
             z = tonumber(Config['LocationSets'][setLocPick].z),
-            w = tonumber(Config['LocationSets'][setLocPick].w),
+            h = tonumber(Config['LocationSets'][setLocPick].h),
         },
     },
 }
-
-local PlayerPed = PlayerPedId()
-local PlayerPos = GetEntityCoords(PlayerPed)
 local position = Locations["coords"]
 
 for k, v in pairs(position) do
-    TriggerServerEvent('Blackmarket-V2:server:CreatePed', v.x, v.y, v.z, v.w)
+    TriggerServerEvent('Blackmarket-V2:server:CreatePed', v.x, v.y, v.z, v.h)
 end
 
-RegisterCommand('market', function()
+if Config['Test_Command'] then
+    RegisterCommand('market', function()
     SetNuiFocus(true, true)
     SendNUIMessage({
         type = "data",
         item = Config['items']
     })
-end)
+    end)
+end
 
-RegisterNetEvent('Blackmarket-V2:client:CreatePed', function(x, y, z, w)
+
+RegisterNetEvent('Blackmarket-V2:client:CreatePed', function(x, y, z, h)
     if not DoesEntityExist(dealer) then
         RequestModel('g_m_m_chicold_01')
         while not HasModelLoaded('g_m_m_chicold_01') do
             Wait(10)
         end
         dealer = CreatePed(26, 'g_m_m_chicold_01', x, y, z - 1, true, false)
-        SetEntityHeading(dealer, w)
+        SetEntityHeading(dealer, h)
         SetBlockingOfNonTemporaryEvents(dealer, true)
         TaskStartScenarioInPlace(dealer, 'WORLD_HUMAN_AA_SMOKE', 0, false)
         FreezeEntityPosition(dealer, true)
         SetEntityInvincible(dealer, true)
         exports["qb-target"]:AddBoxZone("marketped", vector3(x, y, z), 0.75, 0.75, {
             name = "marketped",
-            heading = w,
-            debugPoly = true,
+            heading = h,
+            debugPoly = false,
             minZ = z - 1,
             maxZ = z + 1
         }, {
