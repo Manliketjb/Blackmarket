@@ -13,6 +13,6 @@ RegisterServerEvent('Blackmarket-V2:server:itemgo', function(money, itemcode, it
 	end
 end)
 
-RegisterServerEvent('Blackmarket-V2:server:CreatePed', function(x, y, z, h)
-	TriggerClientEvent('Blackmarket-V2:client:CreatePed', -1, x, y, z, h)
+RegisterServerEvent('Blackmarket-V2:server:CreatePed', function(x, y, z, w)
+	TriggerClientEvent('Blackmarket-V2:client:CreatePed', -1, x, y, z, w)
 end)
