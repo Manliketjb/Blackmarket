@@ -1,7 +1,5 @@
 ## Blackmarket-V2
-Location Changing Crypto Blackmarket with easy to use config and qb-target
-
-Still a wip. If you find any issues and have found a fix the please create a pull request
+The bare bones of a fully functional location changing crypto blackmarket with easy to use config and qb-target
 
 /market - Test Command (Disabled in config)
 
@@ -14,12 +12,12 @@ Still a wip. If you find any issues and have found a fix the please create a pul
 ## Dependencies 
 
 qb-target - https://github.com/BerkieBb/qb-target
-
 qb-core - https://github.com/qbcore-framework/qb-core
 
 ---
 
 ## License 
+
 ```
 Blackmarket-V2
 Copyright (C) 2022  HUB Development
