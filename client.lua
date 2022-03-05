@@ -1,4 +1,3 @@
-local QBCore = exports['qb-core']:GetCoreObject()
 -------------------- Core --------------------
 
 local QBCore = exports['qb-core']:GetCoreObject()
