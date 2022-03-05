@@ -1,4 +1,9 @@
 local QBCore = exports['qb-core']:GetCoreObject()
+-------------------- Core --------------------
+
+local QBCore = exports['qb-core']:GetCoreObject()
+
+-------------------- Location Picker --------------------
 
 local setLocPick = math.random(1, #Config['LocationSets'])
 local Locations = {
@@ -14,21 +19,12 @@ local Locations = {
 local position = Locations["coords"]
 
 for k, v in pairs(position) do
-    TriggerServerEvent('Blackmarket-V2:server:CreatePed', v.x, v.y, v.z, v.w)
+    TriggerServerEvent('Blackmarket:server:CreatePed', v.x, v.y, v.z, v.w) --- Ped Sync
 end
 
-if Config['Test_Command'] then
-    RegisterCommand('market', function()
-        SetNuiFocus(true, true)
-        SendNUIMessage({
-            type = "data",
-            item = Config['items']
-        })
-    end)
-end
+-------------------- Events --------------------
 
-
-RegisterNetEvent('Blackmarket-V2:client:CreatePed', function(x, y, z, w)
+RegisterNetEvent('Blackmarket:client:CreatePed', function(x, y, z, w) --- Ped Sync
     if not DoesEntityExist(dealer) then
         RequestModel('g_m_m_chicold_01')
         while not HasModelLoaded('g_m_m_chicold_01') do
@@ -58,7 +54,7 @@ RegisterNetEvent('Blackmarket-V2:client:CreatePed', function(x, y, z, w)
     end
 end)
 
-RegisterNetEvent('Blackmarket-V2:client:openstore', function()
+RegisterNetEvent('Blackmarket:client:openstore', function()
     if GetClockHours() >= Config['Open'] and GetClockHours() <= Config['Close'] then
         SetNuiFocus(true, true)
         SendNUIMessage({
@@ -70,28 +66,27 @@ RegisterNetEvent('Blackmarket-V2:client:openstore', function()
     end    
 end)
 
-function DrawText3Ds(x, y, z, text)
-    SetTextScale(0.35, 0.35)
-    SetTextFont(4)
-    SetTextProportional(1)
-    SetTextColour(255, 255, 255, 215)
-    SetTextEntry("STRING")
-    SetTextCentre(true)
-    AddTextComponentString(text)
-    SetDrawOrigin(x, y, z, 0)
-    DrawText(0.0, 0.0)
-    local factor = (string.len(text)) / 370
-    DrawRect(0.0, 0.0 + 0.0125, 0.017 + factor, 0.03, 0, 0, 0, 75)
-    ClearDrawOrigin()
-end
-
-RegisterNUICallback('escape', function()
-    SetNuiFocus(false, false)
-end)
+-------------------- NUI --------------------
 
 RegisterNUICallback("itemdata", function(data, cb)
     money = tonumber(data.price)
     itemname = data.itemcode
     itemstring = data.itemsname
-    TriggerServerEvent('Blackmarket-V2:server:itemgo', money, itemname, itemstring)
+    TriggerServerEvent('Blackmarket:server:itemgo', money, itemname, itemstring)
 end)
+
+RegisterNUICallback('escape', function()
+    SetNuiFocus(false, false)
+end)
+
+-------------------- Test Command --------------------
+
+if Config['Test_Command'] then
+    RegisterCommand('market', function()
+        SetNuiFocus(true, true)
+        SendNUIMessage({
+            type = "data",
+            item = Config['items']
+        })
+    end)
+end
