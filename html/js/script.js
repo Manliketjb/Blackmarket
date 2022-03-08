@@ -27,7 +27,7 @@ $(function () {
                 var price = $(this).attr('id');
                 var itemcode = $(this).attr('itemcode');
                 var itemsname = $(this).attr('label');
-                $.post("https://Blackmarket-V2/itemdata", JSON.stringify({
+                $.post("https://Blackmarket/itemdata", JSON.stringify({
                     price: price,
                     itemcode: itemcode,
                     itemsname: itemsname
@@ -41,7 +41,7 @@ $(function () {
 $(document).keydown(function (e) {
     if (e.keyCode == 27) {
         $('.main-display').hide();
-        $.post('https://Blackmarket-V2/escape');
+        $.post('https://Blackmarket/escape');
         document.querySelectorAll(".card").forEach(function (a) { a.remove() })
     }
 });
