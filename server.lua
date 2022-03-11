@@ -4,7 +4,7 @@ local QBCore = exports['qb-core']:GetCoreObject()
 
 -------------------- Events --------------------
 
-RegisterServerEvent('Blackmarket-V2:server:itemgo', function(money, itemcode, itemstring)
+RegisterServerEvent('Blackmarket:server:itemgo', function(money, itemcode, itemstring)
     local source = source
     local Player = QBCore.Functions.GetPlayer(source)
     local moneyPlayer = tonumber(Player.PlayerData.money.crypto)
@@ -17,6 +17,6 @@ RegisterServerEvent('Blackmarket-V2:server:itemgo', function(money, itemcode, it
     end
 end)
 
-RegisterServerEvent('Blackmarket-V2:server:CreatePed', function(x, y, z, w) --- Ped Sync
-    TriggerClientEvent('Blackmarket-V2:client:CreatePed', -1, x, y, z, w)
+RegisterServerEvent('Blackmarket:server:CreatePed', function(x, y, z, w) --- Ped Sync
+    TriggerClientEvent('Blackmarket:client:CreatePed', -1, x, y, z, w)
 end)
