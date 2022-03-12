@@ -44,7 +44,7 @@ RegisterNetEvent('Blackmarket:client:CreatePed', function(x, y, z, w) --- Ped Sy
         }, {
             options = {{
                 type = "client",
-                event = "Blackmarket-V2:client:openstore",
+                event = "Blackmarket:client:openstore",
                 icon = "fas fa-box",
                 label = "View The Store!"
             }},
