@@ -6,12 +6,10 @@ aurthor 'ManlikeTJB'
 client_scripts {
     'config.lua', 
     'client.lua', 
-    'utils.lua'
 }
 
 server_scripts {
     'server.lua', 
-    'utils.lua'
 }
 
 ui_page {
