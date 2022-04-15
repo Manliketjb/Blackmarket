@@ -3,8 +3,11 @@ game 'gta5'
 
 aurthor 'ManlikeTJB'
 
+shared_scripts {
+    'config.lua',
+}
+
 client_scripts {
-    'config.lua', 
     'client.lua', 
 }
 

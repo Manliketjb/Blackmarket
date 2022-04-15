@@ -2,25 +2,6 @@
 
 local QBCore = exports['qb-core']:GetCoreObject()
 
--------------------- Location Picker --------------------
-
-local setLocPick = math.random(1, #Config['LocationSets'])
-local Locations = {
-    ["coords"] = {
-        [1] = {
-            x = tonumber(Config['LocationSets'][setLocPick].x),
-            y = tonumber(Config['LocationSets'][setLocPick].y),
-            z = tonumber(Config['LocationSets'][setLocPick].z),
-            w = tonumber(Config['LocationSets'][setLocPick].w),
-        },
-    },
-}
-local position = Locations["coords"]
-
-for k, v in pairs(position) do
-    TriggerServerEvent('Blackmarket:server:CreatePed', v.x, v.y, v.z, v.w) --- Ped Sync
-end
-
 -------------------- Events --------------------
 
 RegisterNetEvent('Blackmarket:client:CreatePed', function(x, y, z, w) --- Ped Sync
