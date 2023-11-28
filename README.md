@@ -1,25 +1,12 @@
-## Blackmarket-V2
-The bare bones of a fully functional location changing crypto blackmarket with easy to use config and qb-target
+# OUTDATED
 
-/market - Test Command (Disabled in config)
 
-## Screenshot
-
-![Screenshot 2022-03-02 144131](https://user-images.githubusercontent.com/82594996/156391897-07c1dced-46bd-490c-9ea5-abab8f83fd19.jpg)
-
+## New Version Coming soon!
 ---
-
-## Dependencies 
-
-qb-target - https://github.com/BerkieBb/qb-target
-qb-core - https://github.com/qbcore-framework/qb-core
-
----
-
 ## License 
-
 ```
 Blackmarket-V2
+
 Copyright (C) 2022  HUB Development
 
 This program is free software: you can redistribute it and/or modify
